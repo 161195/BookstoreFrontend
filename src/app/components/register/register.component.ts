@@ -10,7 +10,9 @@ import { UserServiceService } from 'src/app/service/userService/user-service.ser
 })
 export class RegisterComponent implements OnInit {
   registrationForm!: FormGroup;
+  loginForm!: FormGroup;
   submitted = true;
+  switchCard: boolean = false;
   constructor(private formBuilder: FormBuilder, private router: Router, private userService: UserServiceService) { }
 
   ngOnInit(): void {
@@ -18,10 +20,18 @@ export class RegisterComponent implements OnInit {
       FullName: ['', [Validators.required, Validators.minLength(3)]],
       Email: ['', [Validators.required, Validators.email]],
       Password: ['', [Validators.required, Validators.minLength(6)]],
-      Phone: ['', [Validators.required]],
+      Phone: ['', [Validators.required]],    
   });
+  this.loginForm = this.formBuilder.group({
+    EmailId: ['', [Validators.required, Validators.email]],
+    Password: ['', [Validators.required, Validators.minLength(6)]],  
+});
 }
-onSubmit() { 
+cardSwap() {
+  console.log(this.switchCard);
+   return this.switchCard === true ? (this.switchCard = false) : (this.switchCard = true); //condition operator
+}
+Register() { 
   this.submitted=true;
   if(this.registrationForm.valid)
   {
@@ -42,4 +52,24 @@ onSubmit() {
     console.log("invalid");
   }
 }
+Login() { 
+  this.submitted=true;
+  if(this.loginForm.valid)
+  {
+    console.log(this.loginForm.value);
+    let login={
+      emailId:this.loginForm.value.EmailId,
+      password:this.loginForm.value.Password,
+   }
+   this.userService.userLogin(login).subscribe((response:any)=>{
+    // localStorage.setItem('token',response.result.userLoginInfo)
+     console.log(response)
+   })
+  }
+  else
+  {
+    console.log("invalid");
+  }
+}
+
 }

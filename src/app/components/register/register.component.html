@@ -1,5 +1,5 @@
-<div class="section">
-    <div Class="left-container">
+<div class="section" fxLayout="row">
+    <div Class="left-container" fxHide.sm fxHide.xs>
         <!-- <mat-card Class="left-container" fxHide.sm fxHide.xs > -->
         <div>
             <img Class="image" src="../assets/2766594.png">
@@ -9,46 +9,81 @@
         </div>
         <!-- </mat-card> -->
     </div>
-    <div Class="right-container">
-        <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+
+    <div Class="right-container" *ngIf="!switchCard" fxLayout="row" fxLayoutAlign="center center">
+        <form [formGroup]="registrationForm" (ngSubmit)="Register()">
             <mat-card class="registration">
                 <div>
-                    <button class="button1">LOGIN</button>
+                    <button class="button1" (click)="cardSwap()">LOGIN</button>
                     <button class="button2">SIGNUP</button>
                 </div>
                 <div class="fields">
                     <mat-form-field appearance="outline">
                         <mat-label>FullName</mat-label>
                         <input matInput placeholder="FullName" formControlName="FullName">
-                        <mat-hint>Hint</mat-hint>
+                        <mat-error>enter valid name</mat-error>
                     </mat-form-field>
                 </div>
                 <div class="fields">
                     <mat-form-field appearance="outline">
                         <mat-label>Email</mat-label>
                         <input matInput placeholder="Email" formControlName="Email">
-                        <mat-hint>Hint</mat-hint>
+                        <mat-error>enter valid email</mat-error>
                     </mat-form-field>
-
                 </div>
                 <div class="fields">
                     <mat-form-field appearance="outline">
                         <mat-label>Password</mat-label>
                         <input matInput placeholder="Password" formControlName="Password">
-                        <mat-hint>Hint</mat-hint>
+                        <mat-error>enter valid password</mat-error>
                     </mat-form-field>
-
                 </div>
                 <div class="fields">
                     <mat-form-field appearance="outline">
                         <mat-label>Phone</mat-label>
                         <input matInput placeholder="Phone" formControlName="Phone">
-                        <mat-hint>Hint</mat-hint>
+                        <mat-error>enter valid phone no</mat-error>
                     </mat-form-field>
                 </div>
 
                 <div class="fields">
                     <button mat-stroked-button class="ForColor">Signup</button>
+                </div>
+            </mat-card>
+        </form>    
+    </div>
+
+    <div Class="right-container" *ngIf="switchCard" fxLayout="row" fxLayoutAlign="center center">
+        <form [formGroup]="loginForm" (ngSubmit)="Login()">
+            <mat-card class="registration">
+                <div>
+                    <button class="button1" >LOGIN</button>
+                    <button class="button2" (click)="cardSwap()">SIGNUP</button>
+                </div>
+                <div class="fields">
+                    <mat-form-field appearance="outline">
+                        <mat-label>EmailId</mat-label>
+                        <input matInput placeholder="EmailId" formControlName="EmailId">
+                        <mat-error>enter valid email</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="fields">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input matInput placeholder="Password" formControlName="Password">
+                        <mat-error>enter valid password</mat-error>
+                    </mat-form-field>
+                </div>
+            
+                <div class="fields">
+                    <button mat-stroked-button class="ForColor">Login</button>
+                </div>
+                <div class="OR">
+                    <span class="OR">___________ OR ___________</span>              
+                </div>
+                <div>
+                    <button  mat-raised-button color="primary" class="button3" >Facebook</button>
+                    <button  mat-stroked-button class="button4">Google</button>
                 </div>
             </mat-card>
         </form>    
