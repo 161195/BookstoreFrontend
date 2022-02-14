@@ -1,0 +1,56 @@
+<div class="section">
+    <div Class="left-container">
+        <!-- <mat-card Class="left-container" fxHide.sm fxHide.xs > -->
+        <div>
+            <img Class="image" src="../assets/2766594.png">
+        </div>
+        <div>
+            <span class="image_bottm_text">ONLINE BOOK SHOPPING</span>
+        </div>
+        <!-- </mat-card> -->
+    </div>
+    <div Class="right-container">
+        <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+            <mat-card class="registration">
+                <div>
+                    <button class="button1">LOGIN</button>
+                    <button class="button2">SIGNUP</button>
+                </div>
+                <div class="fields">
+                    <mat-form-field appearance="outline">
+                        <mat-label>FullName</mat-label>
+                        <input matInput placeholder="FullName" formControlName="FullName">
+                        <mat-hint>Hint</mat-hint>
+                    </mat-form-field>
+                </div>
+                <div class="fields">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input matInput placeholder="Email" formControlName="Email">
+                        <mat-hint>Hint</mat-hint>
+                    </mat-form-field>
+
+                </div>
+                <div class="fields">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input matInput placeholder="Password" formControlName="Password">
+                        <mat-hint>Hint</mat-hint>
+                    </mat-form-field>
+
+                </div>
+                <div class="fields">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Phone</mat-label>
+                        <input matInput placeholder="Phone" formControlName="Phone">
+                        <mat-hint>Hint</mat-hint>
+                    </mat-form-field>
+                </div>
+
+                <div class="fields">
+                    <button mat-stroked-button class="ForColor">Signup</button>
+                </div>
+            </mat-card>
+        </form>    
+    </div>
+</div>
