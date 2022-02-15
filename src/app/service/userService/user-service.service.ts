@@ -5,7 +5,7 @@ import { HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UserServiceService {
-
+  token:any;
   constructor(private httpService:HttpServiceService) { }
   userRegister(data:any){
     let header={
@@ -41,5 +41,15 @@ export class UserServiceService {
       })
     }
     return this.httpService.putService('/User/ResetPassword',data,true,header)
+  }
+  userGetAllBooks(token:any){
+    let header={
+      headers:new HttpHeaders({
+        'Content-Type': ' application/json',
+        Authorization:'Bearer '+ token
+      })
+    }
+    return this.httpService.getService('/Books',true,header);
+
   }
 }

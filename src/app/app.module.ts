@@ -15,14 +15,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
-
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { GetAllBooksComponent } from './components/get-all-books/get-all-books.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     ForgetPasswordComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    DashboardComponent,
+    GetAllBooksComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +42,9 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
     MatButtonModule,
     FlexLayoutModule,
     HttpClientModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatIconModule,
+    MatSelectModule
 
 
 
