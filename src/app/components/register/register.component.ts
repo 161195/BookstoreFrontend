@@ -62,7 +62,7 @@ Login() {
       password:this.loginForm.value.Password,
    }
    this.userService.userLogin(login).subscribe((response:any)=>{
-    // localStorage.setItem('token',response.result.userLoginInfo)
+    localStorage.setItem('token',response.result.token)
      console.log(response)
    })
   }
