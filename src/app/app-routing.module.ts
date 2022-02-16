@@ -5,6 +5,7 @@ import { ForgetPasswordComponent } from './components/forget-password/forget-pas
 import { RegisterComponent } from './components/register/register.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { GetAllBooksComponent } from './components/get-all-books/get-all-books.component';
+import { QuickViewComponent } from './components/quick-view/quick-view.component';
 
 const routes: Routes = [
   {path:'register',component:RegisterComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   children:[
       {path:'', redirectTo:"/Dashboards/books", pathMatch:'full' },
       {path:'books', component:GetAllBooksComponent},
+      {path:'quickview', component:QuickViewComponent},
   ]}
 
 ];

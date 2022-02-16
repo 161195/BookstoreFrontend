@@ -1,0 +1,81 @@
+.container{
+    border: 1px solid darkgrey; 
+    width: 100%;
+    @media screen and (max-width: 1000px) and (min-width: 300px) {
+        border: 1px solid darkgrey; 
+        width: 100%;
+    }
+}
+.image{
+    width: 50%;
+    margin: 30px;
+}
+.prize{
+    font-size: 20px;
+    margin-top: 10px;
+  }
+.rating{
+    background: darkgreen;
+    height: 20px;
+    width: 40px;
+    color: white;
+    margin-bottom: 10px;
+}
+.book_quantity{
+    font-size: 20px;
+    border: 1px solid grey;
+    border-radius: 100%;
+    color: lightgrey;
+}
+.book_qty{
+    font-size: 20px;
+    border: 1px solid grey;
+    border-radius: 100%;
+    color: black;
+}
+.sideTwoImg{
+    margin-bottom: 16%; 
+    margin-right: 5px; 
+    margin-top: 5%;
+}
+.image1{
+    border: 1px solid black; 
+    padding: 5px;
+}
+#img1{
+    height: 55px; 
+    width: 40px;
+}
+#img2{
+    height: 55px; 
+    width: 40px;
+}
+.image2{
+    border: 1px solid black; 
+    padding: 5px;
+}
+.imageContainer{
+    margin-top: 5%;
+}
+.buttonContainer{
+    margin-top: 20px;
+}
+.addtobag{
+    background: brown; 
+    color: white; 
+    width: 125%; 
+    text-transform: uppercase;
+}
+.addtowishlist{
+    background: black; 
+    color: white;
+}
+.wishlistbtn{
+    background: black; 
+    color: white; 
+    width: 50%; 
+    text-transform: uppercase;
+}
+.wishlistIcon{
+    font-size: 18px;
+}

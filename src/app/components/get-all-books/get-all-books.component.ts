@@ -43,4 +43,8 @@ page: number = 1;
     newArrivals(){
       this.Booklist.reverse();
     }
+
+    quickview(){
+      this.router.navigateByUrl('/Dashboards/quickview')
+    }
 }

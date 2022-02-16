@@ -19,6 +19,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { GetAllBooksComponent } from './components/get-all-books/get-all-books.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
+import { QuickViewComponent } from './components/quick-view/quick-view.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {MatSelectModule} from '@angular/material/select';
     ForgetPasswordComponent,
     ResetPasswordComponent,
     DashboardComponent,
-    GetAllBooksComponent
+    GetAllBooksComponent,
+    QuickViewComponent
   ],
   imports: [
     BrowserModule,

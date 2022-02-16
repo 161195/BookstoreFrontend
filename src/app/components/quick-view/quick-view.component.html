@@ -1,0 +1,41 @@
+<p>quick-view works!</p>
+<div fxLayout="row" fxLayoutAlign="center start" fxLayout.xs="row" fxFlex.xs="95">
+    <div class="sideTwoImg" fxLayout="column" fxLayoutGap="10px">
+        <div class="image1">
+            <img src="../assets/books123.png" id="img1">
+        </div>
+        <div class="image2">
+            <img src="../assets/side small book.png" id="img2">
+        </div>
+    </div>
+    <div class="imageContainer" fxLayout="column">
+        <div class="container" fxLayout="row">
+            <div class="image">
+                <img src="../assets/books123.png">
+            </div>
+        </div>
+        <div class="buttonContainer" fxLayout="row" fxLayoutAlign="space-between center">
+            <div>
+                <button mat-raised-button class="addtobag">
+                    add to bag
+                </button>
+                <!-- <div fxLayout="row" fxLayoutAlign="space-evenly center">
+                    <button mat-icon-button >
+                        <span class="book_quantity">-</span>
+                    </button>
+                    <!-- <span style="font-size: 15px;">{{book_qty}}</span> -->
+                    <!-- <button mat-icon-button >
+                        <span class="book_qty">+</span>
+                    </button>
+                </div>  -->
+            </div>
+            <div fxLayout="row" fxLayoutAlign="start center" class="addtowishlist">
+                <button mat-flat-button  class="wishlistbtn">
+                    <mat-icon class="wishlistIcon">favorite</mat-icon>wishlist
+                </button>
+            </div>
+        </div>
+    </div>  
+</div>
+
+
