@@ -33,11 +33,11 @@ page: number = 1;
     } 
     
     lowTohigh(){
-      this.Booklist = this.Booklist.sort((low: any, high: any) => low.price - high.price);
+      this.Booklist = this.Booklist.sort((low: any, high: any) => low.discountPrice - high.discountPrice);
     }
   
     highTolow(){
-      this.Booklist = this.Booklist.sort((low: any, high: any) => high.price - low.price);
+      this.Booklist = this.Booklist.sort((low: any, high: any) => high.discountPrice - low.discountPrice);
     }
   
     newArrivals(){
