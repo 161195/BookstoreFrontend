@@ -14,11 +14,11 @@
         </mat-form-field>
     </div>
 </div>
-<div fxLayout="row wrap" fxLayoutAlign="center center">
+<div class="forGrid" fxLayout="row wrap" fxLayoutAlign="center center">
     <div class="container" *ngFor="let book of Booklist" fxLayout.sm="column" fxFlex.xs="50" >
 
         <div class="image" fxLayoutAlign="center center" >
-            <img src="../assets/books123.png" (click)="quickview()" style="height: 60%; width: 50%;" >
+            <img src="../assets/books123.png" (click)="quickview(book)" style="height: 60%; width: 50%;" >
         </div>
         <div class="bookname">
             {{book.bookName}}
@@ -40,3 +40,4 @@
         </div>
     </div>
 </div>
+

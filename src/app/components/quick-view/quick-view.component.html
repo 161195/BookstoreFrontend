@@ -1,4 +1,3 @@
-<p>quick-view works!</p>
 <div fxLayout="row" fxLayoutAlign="center start" fxLayout.xs="row" fxFlex.xs="95">
     <div class="sideTwoImg" fxLayout="column" fxLayoutGap="10px">
         <div class="image1">
@@ -19,21 +18,50 @@
                 <button mat-raised-button class="addtobag">
                     add to bag
                 </button>
-                <!-- <div fxLayout="row" fxLayoutAlign="space-evenly center">
-                    <button mat-icon-button >
-                        <span class="book_quantity">-</span>
-                    </button>
-                    <!-- <span style="font-size: 15px;">{{book_qty}}</span> -->
-                    <!-- <button mat-icon-button >
-                        <span class="book_qty">+</span>
-                    </button>
-                </div>  -->
             </div>
             <div fxLayout="row" fxLayoutAlign="start center" class="addtowishlist">
-                <button mat-flat-button  class="wishlistbtn">
+                <button mat-flat-button class="wishlistbtn">
                     <mat-icon class="wishlistIcon">favorite</mat-icon>wishlist
                 </button>
             </div>
         </div>
-    </div>  
+    </div>
+    <div class="bookDetails" fxLayout="column">
+        <div fxLayout="column">
+            <div class="bookName">
+                {{bookData?.bookName}}
+            </div>
+            <div class="author">
+                by {{bookData?.bookAuthor}}
+            </div>
+            <div class="rating" fxLayout="row" fxLayoutAlign="center center">
+                <span>4.5</span>
+                <mat-icon class="starIcon">star</mat-icon>
+            </div>
+    
+            <div class="prize" fxLayout="row" fxLayoutGap="10px">
+                <div class="price">
+                    Rs.{{bookData?.discountPrice}}
+                </div>
+                <div class="discountprice">
+                    <del> Rs. {{bookData?.originalPrice}} </del>
+                </div>
+            </div>
+        </div>
+        <mat-divider class="divider"></mat-divider>
+        <div fxLayout="column" fxLayoutAlign="start start">
+            <span class="bookdesc">Book Detail</span>
+            {{bookData?.bookDetails}}
+            <p class="paragraph">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat commodi et<br> possimus quidem
+                veritatis.
+                Quas nesciunt quis, nobis inventore esse voluptatem,<br>corporis quod necessitatibus officiis, natus
+                animi
+                velit. Debitis, eveniet.
+            </p>
+        </div>
+        <mat-divider class="divider"></mat-divider>
+    
+    </div>
 </div>
+

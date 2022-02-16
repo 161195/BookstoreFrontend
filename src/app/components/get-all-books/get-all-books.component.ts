@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { BookServiceService } from 'src/app/service/bookService/book-service.service';
 import { UserServiceService } from 'src/app/service/userService/user-service.service';
 
 @Component({
@@ -14,21 +15,19 @@ countBooks: any;
 totalLength: any;
 page: number = 1;
 
-  constructor( private router: Router, private userService: UserServiceService) { }
+  constructor( private router: Router, private bookService: BookServiceService) { }
 
   ngOnInit(): void {
     this.token=localStorage.getItem('token');
-    this.getAllNotes()
+    this.getAllBooks()
   }
-  getAllNotes() { 
-    this.userService.userGetAllBooks(this.token).subscribe((response:any)=>{
+  getAllBooks() { 
+    this.bookService.bookGetAllBooks(this.token).subscribe((response:any)=>{
       this.Booklist= response.book
       console.log(this.Booklist);
-        // return this.Booklist 
         this.totalLength = response.book.length
         this.countBooks = response.book.length
         console.log(this.countBooks) 
-      // this.notelist.reverse()
     })
     } 
     
@@ -44,7 +43,9 @@ page: number = 1;
       this.Booklist.reverse();
     }
 
-    quickview(){
-      this.router.navigateByUrl('/Dashboards/quickview')
+    quickview(book:any){
+      localStorage.setItem('bookId', book.bookId);
+      console.log("bookId", book.bookId);
+      this.router.navigateByUrl('/Dashboards/quickview/'+ book.bookId)
     }
 }

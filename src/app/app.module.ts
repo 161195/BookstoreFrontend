@@ -20,6 +20,7 @@ import { GetAllBooksComponent } from './components/get-all-books/get-all-books.c
 import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
 import { QuickViewComponent } from './components/quick-view/quick-view.component';
+import {MatDividerModule} from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { QuickViewComponent } from './components/quick-view/quick-view.component
     HttpClientModule,
     MatToolbarModule,
     MatIconModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDividerModule
 
 
 

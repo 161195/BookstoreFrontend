@@ -42,14 +42,14 @@ export class UserServiceService {
     }
     return this.httpService.putService('/User/ResetPassword',data,true,header)
   }
-  userGetAllBooks(token:any){
-    let header={
-      headers:new HttpHeaders({
-        'Content-Type': ' application/json',
-        Authorization:'Bearer '+ token
-      })
-    }
-    return this.httpService.getService('/Books',true,header);
+  // userGetAllBooks(token:any){
+  //   let header={
+  //     headers:new HttpHeaders({
+  //       'Content-Type': ' application/json',
+  //       Authorization:'Bearer '+ token
+  //     })
+  //   }
+  //   return this.httpService.getService('/Books',true,header);
 
-  }
+  // }
 }

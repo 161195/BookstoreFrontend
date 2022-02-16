@@ -15,7 +15,7 @@ const routes: Routes = [
   children:[
       {path:'', redirectTo:"/Dashboards/books", pathMatch:'full' },
       {path:'books', component:GetAllBooksComponent},
-      {path:'quickview', component:QuickViewComponent},
+      {path:'quickview/:bookid', component:QuickViewComponent},
   ]}
 
 ];

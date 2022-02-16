@@ -3,13 +3,13 @@
     height: 40%;
     width: 15%;
     margin: 20px;
+    
     @media screen and (max-width: 1000px) and (min-width: 300px) {
       border: 1px solid lightgrey;
       height: 40%;
       width: 15%;
       margin: 20px;
-        // display: grid;
-        // grid-template-rows: 1fr 1fr 1fr ;
+        
        
 
     }
@@ -65,3 +65,8 @@
     margin-left: 90px; 
     margin-top: 50px;
   }
+  // .forGrid
+  // {
+  //   display: grid;
+  //   grid-template-columns: 200px 200px 200px 200px ;
+  // }
