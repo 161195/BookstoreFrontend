@@ -1,1 +1,57 @@
-<p>cart-list works!</p>
+<mat-accordion>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                My Cart ({{cartCount}})
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="container">
+            <div fxLayout="row" fxLayoutAlign="space-between center">
+                <div fxLayout="column">
+                    <div class="book" fxLayout="row" fxLayoutAlign="start center" *ngFor="let book of cartList">
+                        <div>
+                            <div class="image" fxLayoutAlign="start center">
+                                <img src="../assets/books123.png" class="bookImage">
+                            </div>
+                        </div>
+                        <div class="bookdetails">
+                            <div class="bookname">
+                                {{book.bookName}}
+                            </div>
+                            <div class="author">
+                                by {{book.bookAuthor}}
+                            </div>
+                            <div class="prize" fxLayout="row" fxLayoutGap="5px">
+                                <div class="mrp">
+                                    Rs.{{book.discountPrice}}
+                                </div>
+                                <div class="discount">
+                                    <del> Rs.{{book.originalPrice}} </del>
+                                </div>
+                            </div>
+                            <div class="quantity" fxLayout="row" fxLayoutAlign="space-evenly center">
+                                <button mat-mini-fab style="background-color: white; margin-right: 10px;">
+                                    <span class="book_quantity">-</span>
+                                </button>
+                                <!-- <span class="book_qtyName">{{book_qty}}</span> -->
+                                <button mat-mini-fab style="background-color: white; margin-left: 10px;">
+                                    <span class="book_qty">+</span>
+                                </button>
+                                <span class="remove">Remove</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rightdiv" fxLayout="column" fxLayoutAlign="space-between center" fxLayoutGap="80%">
+                    <div class="location" fxLayoutAlign="center center">
+                        <mat-icon class="placeIcon">place</mat-icon>
+                        <span class="loc">Use current location</span>
+                    </div>
+                    <div>
+                        <button mat-flat-button color="primary" class="button">Place Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-expansion-panel>
+</mat-accordion>

@@ -48,7 +48,7 @@ export class BookServiceService {
         Authorization:'Bearer '+ token
       })
     }
-    return this.httpService.deleteService('/Wishlist/'+data.WishListId,true,header);
+    return this.httpService.deleteService('/Wishlist/'+data,true,header);
   }
   AddingToCartList(data:any,token:any)
   {
@@ -59,6 +59,17 @@ export class BookServiceService {
       })
     }
     return this.httpService.postService('/Cart/'+data.BookId+'/Cart',data,true,header);
+    
+  }
+  getCartListItems(token:any)
+  {
+    let header={
+      headers:new HttpHeaders({
+        'Content-Type': ' application/json',
+        Authorization:'Bearer '+ token
+      })
+    }
+    return this.httpService.getService('/Cart',true,header);
     
   }
 }

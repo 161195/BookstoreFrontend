@@ -24,6 +24,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatRadioModule} from '@angular/material/radio';
 import { WishListAddComponent } from './components/wish-list-add/wish-list-add.component';
 import { CartListComponent } from './components/cart-list/cart-list.component';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { CartListComponent } from './components/cart-list/cart-list.component';
     MatIconModule,
     MatSelectModule,
     MatDividerModule,
-    MatRadioModule
+    MatRadioModule,
+    MatExpansionModule
 
 
 

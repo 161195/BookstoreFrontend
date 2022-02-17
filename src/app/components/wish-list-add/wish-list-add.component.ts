@@ -25,14 +25,22 @@ export class WishListAddComponent implements OnInit {
       this.wishlistCount = response.wishlist.length
     })
   }
-  deleteFromWishlist(){
-    let data = {
-      WishListId: this.wishList1.wishListId,
-    }
-    this.bookService.itemsDeleteFromWishlist(data,this.token).subscribe((response:any)=>{
-      console.log(response)
+  // deleteFromWishlist(){
+  //   let data = {
+  //     WishListId: this.wishList1.wishListId,
+  //   }
+  //   this.bookService.itemsDeleteFromWishlist(data,this.token).subscribe((response:any)=>{
+  //     console.log(response)
 
+  //   })
+  // }
+  deleteFromWishlist(book:any){
+    console.log(book.wishListId)
+    this.bookService.itemsDeleteFromWishlist(book.wishListId,this.token).subscribe((response:any)=>{
+      console.log(response)
+      
     })
+
   }
 
 }
