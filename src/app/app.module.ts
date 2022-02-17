@@ -23,6 +23,7 @@ import { QuickViewComponent } from './components/quick-view/quick-view.component
 import {MatDividerModule} from '@angular/material/divider';
 import {MatRadioModule} from '@angular/material/radio';
 import { WishListAddComponent } from './components/wish-list-add/wish-list-add.component';
+import { CartListComponent } from './components/cart-list/cart-list.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { WishListAddComponent } from './components/wish-list-add/wish-list-add.c
     DashboardComponent,
     GetAllBooksComponent,
     QuickViewComponent,
-    WishListAddComponent
+    WishListAddComponent,
+    CartListComponent
   ],
   imports: [
     BrowserModule,

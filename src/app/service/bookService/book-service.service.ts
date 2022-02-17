@@ -28,6 +28,27 @@ export class BookServiceService {
       })
     }
     return this.httpService.postService('/Wishlist/'+data.BookId,data,true,header);
-
   }
+  getwishlistItems(token:any)
+  {
+    let header={
+      headers:new HttpHeaders({
+        'Content-Type': ' application/json',
+        Authorization:'Bearer '+ token
+      })
+    }
+    return this.httpService.getService('/Wishlist',true,header);
+    
+  }
+  itemsDeleteFromWishlist(data:any,token:any)
+  {
+    let header={
+      headers:new HttpHeaders({
+        'Content-Type': ' application/json',
+        Authorization:'Bearer '+ token
+      })
+    }
+    return this.httpService.deleteService('/Wishlist/'+data.WishListId,true,header);
+  }
+ 
 }

@@ -7,7 +7,7 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
 import { GetAllBooksComponent } from './components/get-all-books/get-all-books.component';
 import { QuickViewComponent } from './components/quick-view/quick-view.component';
 import { WishListAddComponent } from './components/wish-list-add/wish-list-add.component';
-
+import {CartListComponent} from './components/cart-list/cart-list.component';
 
 const routes: Routes = [
   {path:'register',component:RegisterComponent},
@@ -19,6 +19,8 @@ const routes: Routes = [
       {path:'books', component:GetAllBooksComponent},
       {path:'quickview/:bookid', component:QuickViewComponent},
       {path: 'WishList' , component:WishListAddComponent},
+      {path: 'CartList' , component:CartListComponent},
+
   ]}
 
 ];

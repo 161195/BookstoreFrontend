@@ -1,10 +1,8 @@
 <div fxLayout="column">
     <mat-card class="mywishlist" fxLayoutAlign="start center">
-        <span>My Wishlist</span>
+        <span>My Wishlist({{wishlistCount}})</span>
     </mat-card>
-    <!-- <mat-card class="book" fxLayout="row" fxLayoutAlign="start center" *ngFor="let book of wishList"> -->
-    <mat-card class="book" fxLayout="row" fxLayoutAlign="start center">
-
+    <mat-card class="book" fxLayout="row" fxLayoutAlign="start center" *ngFor="let book of wishList1">
         <div fxLayout="row" fxLayoutAlign="space-evenly center">
             <div>
                 <div class="image" fxLayoutAlign="start center">
@@ -13,10 +11,10 @@
             </div>
             <div class="bookdetails">
                 <div class="bookname">
-                    <!-- {{book.product_id.bookName}} -->123
+                    {{book.bookName}}
                 </div>
                 <div class="author">
-                    <!-- by {{book.product_id.author}} -->123
+                    by {{book.bookAuthor}}
                 </div>
                 <div class="rating" fxLayoutAlign="start center">
                     4.5
@@ -24,17 +22,16 @@
                 </div>
                 <div class="prize" fxLayout="row" fxLayoutGap="5px">
                     <div class="mrp">
-                        <!-- Rs.{{book.product_id.discountPrice}} -->123
+                        Rs.{{book.discountPrice}}
                     </div>
                     <div class="discount">
-                        <!-- <del> Rs.{{book.product_id.price}} </del> -->
-                        123
+                        <del> Rs.{{book.originalPrice}}</del>
                     </div>
                 </div>
             </div>
         </div>
         <div class="rightdiv" fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="80%">
-            <img src="../assets/delete-xxl.png" id="delete">
+            <img src="../assets/delete-xxl.png" id="delete" (click)="deleteFromWishlist()" class="rightdiv">
         </div>
     </mat-card>
 </div>

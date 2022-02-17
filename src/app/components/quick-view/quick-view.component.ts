@@ -18,6 +18,7 @@ bookData: any;
     this.bookId = localStorage.getItem("bookId")
     this.getBookWithId()
   }
+
   getBookWithId() { 
     this.bookService.bookGetAllBooks(this.token).subscribe((response: any) => {
       response.book.forEach((element: any) => {
@@ -39,5 +40,8 @@ bookData: any;
     })
     this.router.navigateByUrl('/Dashboards/WishList')
   }
+
+
+
 
 }
