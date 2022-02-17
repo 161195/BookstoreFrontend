@@ -41,7 +41,16 @@ bookData: any;
     this.router.navigateByUrl('/Dashboards/WishList')
   }
 
-
+  addToCartList(){
+    let data = {
+      BookId: this.bookId
+    }
+    console.log("added to cartlist")
+    this.bookService.AddingToCartList(data,this.token).subscribe((response:any) =>{
+      console.log(response)
+    })
+    this.router.navigateByUrl('/Dashboards/CartList')
+  }
 
 
 }
