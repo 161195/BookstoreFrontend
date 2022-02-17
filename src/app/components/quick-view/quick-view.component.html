@@ -20,7 +20,7 @@
                 </button>
             </div>
             <div fxLayout="row" fxLayoutAlign="start center" class="addtowishlist">
-                <button mat-flat-button class="wishlistbtn">
+                <button mat-flat-button (click)="addToWishList()"  class="wishlistbtn">
                     <mat-icon class="wishlistIcon">favorite</mat-icon>wishlist
                 </button>
             </div>
@@ -61,7 +61,36 @@
             </p>
         </div>
         <mat-divider class="divider"></mat-divider>
-    
+
+        <div class="customer">
+            <span>Customers Feedback</span>
+        </div>
+
+        <div class="overallratin">
+            <div class="rate">
+                <p class="ratename">Overall Rating</p>
+                <div class="starrating">
+                    <input type="radio" id="rate-5"  name="rate" value="5">
+                    <label for="rate-5" class="fa fa-star"></label>
+                    <input type="radio" id="rate-4" name="rate" value="4">
+                    <label for="rate-4" class="fa fa-star"></label>
+                    <input type="radio" id="rate-3"  name="rate" value="3">
+                    <label for="rate-3" class="fa fa-star"></label>
+                    <input type="radio" id="rate-2" name="rate" value="2">
+                    <label for="rate-2" class="fa fa-star"></label>
+                    <input type="radio" id="rate-1" name="rate" value="1">
+                    <label for="rate-1" class="fa fa-star"></label>
+                </div>
+            </div>
+            <div>
+                <input type="text" placeholder="Write your review" class="review">
+            </div>
+            <div fxLayoutAlign="end center">
+                <button mat-flat-button color="primary" class="submit" >Submit</button>
+            </div>
+        </div>
+
+       
     </div>
 </div>
 

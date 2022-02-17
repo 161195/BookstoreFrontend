@@ -1,118 +1,253 @@
-.container{
-    border: 1px solid darkgrey; 
-    width: 100%;
-    @media screen and (max-width: 1000px) and (min-width: 300px) {
-        border: 1px solid darkgrey; 
-        width: 100%;
-    }
-}
-.image{
-    width: 50%;
-    margin: 30px;
-}
-.prize{
-    font-size: 20px;
-    margin-top: 10px;
-  }
-.rating{
-    background: darkgreen;
-    height: 20px;
-    width: 40px;
-    color: white;
-    margin-bottom: 10px;
-}
-.book_quantity{
-    font-size: 20px;
-    border: 1px solid grey;
-    border-radius: 100%;
-    color: lightgrey;
-}
-.book_qty{
-    font-size: 20px;
-    border: 1px solid grey;
-    border-radius: 100%;
-    color: black;
-}
-.sideTwoImg{
-    margin-bottom: 16%; 
+div { 
+
+	.sideTwoImg { 
+        margin-bottom: 16%; 
     margin-right: 5px; 
     margin-top: 5%;
-}
-.image1{
-    border: 1px solid black; 
-    padding: 5px;
-}
-#img1{
-    height: 55px; 
-    width: 40px;
-}
-#img2{
-    height: 55px; 
-    width: 40px;
-}
-.image2{
-    border: 1px solid black; 
-    padding: 5px;
-}
-.imageContainer{
-    margin-top: 5%;
-}
-.buttonContainer{
-    margin-top: 20px;
-}
-.addtobag{
-    background: brown; 
-    color: white; 
-    width: 125%; 
-    text-transform: uppercase;
-}
-.addtowishlist{
-    background: black; 
-    color: white;
-}
-.wishlistbtn{
-    background: black; 
-    color: white; 
-    width: 50%; 
-    text-transform: uppercase;
-}
-.wishlistIcon{
-    font-size: 18px;
-}
-.bookDetails{
-    margin-left: 5%; 
-    margin-bottom: 5%; 
-    margin-top: 5%;
-}
-.bookName{
-    font-size: 20px; 
-    margin-bottom: 10px;
-}
-.author{
-    color: grey; 
-    font-size: 15px; 
-    margin-bottom: 10px;
-}
-.starIcon{
-    font-size: 10px; 
-    margin-top: 12px;
-}
-.price{
-    font-weight: 600; 
-    margin-bottom: 10px;
-}
-.discountprice{
-    color: grey;
-}
-.divider{
-    margin-top: 10px; 
-    width: 595px;
-}
-.bookdesc{
-    opacity: 0.7; 
-    margin-top: 20px; 
-    margin-bottom: 5px;
-}
-.paragraph{
-    font-size: 13px;
+
+		.image1 { 
+            border: 1px solid black; 
+              padding: 5px;
+
+			#img1 { 
+                height: 55px; 
+                width: 40px;
+
+			}
+		}
+
+		.image2 { 
+            border: 1px solid black; 
+            padding: 5px;
+
+			#img2 { 
+                height: 55px; 
+                width: 40px;
+
+			}
+		}
+	}
+
+	.imageContainer { 
+        margin-top: 5%;
+
+		.container { 
+            border: 1px solid darkgrey; 
+            width: 100%;
+            @media screen and (max-width: 1000px) and (min-width: 300px) {
+                border: 1px solid darkgrey; 
+                width: 100%;
+            }
+
+			.image { 
+                width: 50%;
+                margin: 30px;
+
+				// img { 
+
+				// }
+			}
+		}
+
+		.buttonContainer { 
+            margin-top: 20px;
+
+			div { 
+
+				.addtobag { 
+                    background: brown; 
+                    color: white; 
+                    width: 125%; 
+                    text-transform: uppercase;
+
+				}
+			}
+
+			.addtowishlist { 
+                background: black; 
+                color: white;
+
+				.wishlistbtn { 
+                    background: black; 
+                    color: white; 
+                    width: 50%; 
+                    text-transform: uppercase;
+
+					.wishlistIcon { 
+                        font-size: 18px;
+
+					}
+				}
+			}
+		}
+	}
+
+	.bookDetails { 
+        margin-left: 5%; 
+        margin-bottom: 5%; 
+        margin-top: 5%;
+
+		div { 
+
+			.bookName { 
+                font-size: 20px; 
+                margin-bottom: 10px;
+
+			}
+
+			.author { 
+                color: grey; 
+                font-size: 15px; 
+                margin-bottom: 10px;
+
+			}
+
+			.rating { 
+                background: darkgreen;
+                height: 20px;
+                width: 40px;
+                color: white;
+                margin-bottom: 10px;
+
+				// span { 
+
+				// }
+
+				.starIcon { 
+                    font-size: 10px; 
+                    margin-top: 12px;
+
+				}
+			}
+
+			.prize { 
+                font-size: 20px;
+                margin-top: 10px;
+
+				.price { 
+                    font-weight: 600; 
+                    margin-bottom: 10px;
+
+				}
+
+				.discountprice {
+                    color: grey; 
+
+					// del { 
+
+					// }
+				}
+			}
+		}
+        div { 
+
+            .bookdesc { 
+                opacity: 0.7; 
+                margin-top: 20px; 
+                margin-bottom: 5px;
+        
+            }
+        
+            .paragraph { 
+                font-size: 13px;
+        
+                // br { 
+        
+                // }
+            }
+        }
+        
+
+		.divider { 
+            margin-top: 10px; 
+            width: 595px;
+
+		}
+        .customer
+        {
+            font-size: 18px; 
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        .overallratin {
+            background: whitesmoke; 
+
+            .rate { 
+                margin-left: 15px;        
+                .ratename { 
+                    font-size: 13px; 
+                    font-weight: 500;
+                    margin-top: 10px;
+                }
+        
+                .starrating { 
+                    margin-bottom: 10px;
+                    float: left;
+
+                    .starrating input{
+                        display: none;
+                    }
+                    .starrating label{
+                        font-size: 20px;
+                        color: #444;
+                        padding: 8px;
+                        float: right;
+                        transition: all 0.2 ease;
+                    }
+                    input:not(:checked) ~ label:hover,
+                    input:not(:checked) ~ label:hover ~ label
+                    {
+                        color: #fd4;
+                    }
+                    input #rate-5:checked ~ label{
+                        color: #fe7;
+                        text-shadow: 0 0 20px #952;
+                    }
+                }
+            }
+        
+            div { 
+        
+                .review {
+                    border: none; 
+                    outline: none; 
+                    height: 60px; 
+                    width: 90%;
+                    margin-left: 20px;
+                    font-size: 15px; 
+      
+        
+                }
+            }
+            div { 
+
+                .submit { 
+                    margin-right: 35px; 
+                    margin-top: 20px; 
+                    margin-bottom: 20px; 
+            
+                }
+            }
+
+        }
+        // div { 
+
+        //     div { 
+        
+        //         .fabbutton { 
+        
+        //             mat-icon { 
+        
+        //             }
+        //         }
+        
+        //         span { 
+        
+        //         }
+        //     }
+        // }
+       
+
+      
+	}
 }

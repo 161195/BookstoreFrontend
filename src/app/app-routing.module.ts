@@ -6,6 +6,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { GetAllBooksComponent } from './components/get-all-books/get-all-books.component';
 import { QuickViewComponent } from './components/quick-view/quick-view.component';
+import { WishListAddComponent } from './components/wish-list-add/wish-list-add.component';
+
 
 const routes: Routes = [
   {path:'register',component:RegisterComponent},
@@ -16,6 +18,7 @@ const routes: Routes = [
       {path:'', redirectTo:"/Dashboards/books", pathMatch:'full' },
       {path:'books', component:GetAllBooksComponent},
       {path:'quickview/:bookid', component:QuickViewComponent},
+      {path: 'WishList' , component:WishListAddComponent},
   ]}
 
 ];

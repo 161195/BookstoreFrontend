@@ -1,6 +1,6 @@
 import { Component, OnInit ,Input } from '@angular/core';
 import { BookServiceService } from 'src/app/service/bookService/book-service.service';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-quick-view',
@@ -11,7 +11,7 @@ export class QuickViewComponent implements OnInit {
 token:any;
 bookId: any;
 bookData: any;
-  constructor( private bookService: BookServiceService) { }
+  constructor( private bookService: BookServiceService ,private router: Router) { }
 
   ngOnInit(): void {
     this.token=localStorage.getItem('token');
@@ -28,4 +28,16 @@ bookData: any;
     });
   })
   }
+
+  addToWishList(){
+    let data = {
+      BookId: this.bookId
+    }
+    console.log("added to wishlist")
+    this.bookService.AddingToWishList(data,this.token).subscribe((response:any) =>{
+      console.log(response)
+    })
+    this.router.navigateByUrl('/Dashboards/WishList')
+  }
+
 }

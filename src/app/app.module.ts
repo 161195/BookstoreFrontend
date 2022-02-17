@@ -21,6 +21,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
 import { QuickViewComponent } from './components/quick-view/quick-view.component';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatRadioModule} from '@angular/material/radio';
+import { WishListAddComponent } from './components/wish-list-add/wish-list-add.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import {MatDividerModule} from '@angular/material/divider';
     ResetPasswordComponent,
     DashboardComponent,
     GetAllBooksComponent,
-    QuickViewComponent
+    QuickViewComponent,
+    WishListAddComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,8 @@ import {MatDividerModule} from '@angular/material/divider';
     MatToolbarModule,
     MatIconModule,
     MatSelectModule,
-    MatDividerModule
+    MatDividerModule,
+    MatRadioModule
 
 
 

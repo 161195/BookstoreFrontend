@@ -64,6 +64,10 @@ Login() {
    this.userService.userLogin(login).subscribe((response:any)=>{
     localStorage.setItem('token',response.jwtToken)
      console.log(response)
+     if(response.success == true)
+      {
+        this.router.navigateByUrl('/Dashboards/books')
+      }
    })
   }
   else

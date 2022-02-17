@@ -19,4 +19,15 @@ export class BookServiceService {
     return this.httpService.getService('/Books',true,header);
 
   }
+  AddingToWishList(data:any,token:any)
+  {
+    let header={
+      headers:new HttpHeaders({
+        'Content-Type': ' application/json',
+        Authorization:'Bearer '+ token
+      })
+    }
+    return this.httpService.postService('/Wishlist/'+data.BookId,data,true,header);
+
+  }
 }
