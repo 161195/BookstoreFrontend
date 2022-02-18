@@ -16,4 +16,9 @@ home()
 {
   this.router.navigateByUrl('/Dashboards/books')
 }
+cart()
+{
+  this.router.navigateByUrl('/Dashboards/CartList')
+
+}
 }

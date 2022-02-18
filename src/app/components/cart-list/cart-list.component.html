@@ -1,5 +1,5 @@
 <mat-accordion>
-    <mat-expansion-panel>
+    <mat-expansion-panel> 
         <mat-expansion-panel-header>
             <mat-panel-title>
                 My Cart ({{cartCount}})
@@ -29,12 +29,12 @@
                                     <del> Rs.{{book.originalPrice}} </del>
                                 </div>
                             </div>
-                            <div class="quantity" fxLayout="row" fxLayoutAlign="space-evenly center">
-                                <button mat-mini-fab style="background-color: white; margin-right: 10px;">
+                            <div class="quantity" fxLayout="row" fxLayoutAlign="space-evenly center" >
+                                <button mat-mini-fab style="background-color: white; margin-right: 10px;" (click)="decrement(book)">
                                     <span class="book_quantity">-</span>
                                 </button>
-                                <!-- <span class="book_qtyName">{{book_qty}}</span> -->
-                                <button mat-mini-fab style="background-color: white; margin-left: 10px;">
+                                <span class="book_qtyName">{{quantity}}</span>
+                                <button mat-mini-fab style="background-color: white; margin-left: 10px;"(click)="increment(book)">
                                     <span class="book_qty">+</span>
                                 </button>
                                 <span class="remove">Remove</span>
@@ -42,16 +42,128 @@
                         </div>
                     </div>
                 </div>
-                <div class="rightdiv" fxLayout="column" fxLayoutAlign="space-between center" fxLayoutGap="80%">
+                <div class="rightdiv" fxLayout="column" fxLayoutAlign="space-between center" fxLayoutGap="80%" *ngFor="let book of cartList">
                     <div class="location" fxLayoutAlign="center center">
                         <mat-icon class="placeIcon">place</mat-icon>
                         <span class="loc">Use current location</span>
                     </div>
                     <div>
-                        <button mat-flat-button color="primary" class="button">Place Order</button>
+                        <button mat-flat-button color="primary" class="button" (click)="placeOrder(book)">Place Order</button>
                     </div>
                 </div>
             </div>
         </div>
     </mat-expansion-panel>
+
+    <mat-expansion-panel (click)="getAddress()">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Customer Details
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="customerDetails" fxLayout="row" fxLayoutAlign="space-between start" >
+            <!-- <form [formGroup]="editDetailsOfUserForm"> -->
+                <div  *ngFor="let userInfo of addressList">
+                    <div class="details" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="40%">
+                        <span class="heading">Customer Details</span>
+                    </div>
+                    <div class="details" fxLayout="row" fxLayoutGap="20px">
+                        <div>
+                            <div>
+                                <mat-label class="names">Full Name</mat-label>
+                            </div>
+                            <div class= "nameadd">
+                               
+                                <!-- <p> -->
+                                    <!-- <mat-form-field  appearance="outline"> -->
+                                        {{userInfo.fullName}}
+                                        <!-- <input matInput type="text" formControlName="fullName" placeholder=""> -->
+                                        <!-- <mat-error>Enter full name</mat-error> -->
+                                    <!-- </mat-form-field> -->
+                                <!-- </p> -->
+                            </div>
+                        </div>
+                        <!-- <div>
+                            <div>
+                                <mat-label class="names">Mobile Number</mat-label>
+                            </div>
+                            <div>
+                                {{userInfo.fullAddress}} -->
+                                <!-- <p> -->
+                                    <!-- <mat-form-field appearance="outline"> -->
+                                        <!-- <input matInput type="text" formControlName="mobileNo" placeholder=""> -->
+                                        <!-- <mat-error>Enter mobile number</mat-error> -->
+                                    <!-- </mat-form-field> -->
+                                <!-- </p> -->
+                            <!-- </div>
+                        </div> -->
+                    </div>
+                    <div class="details" fxLayout="column">
+                        <div>
+                            <mat-label class="names">Address</mat-label>
+                        </div>
+                        <div class= "nameadd">
+                            {{userInfo.fullAddress}}
+                            <!-- <p> -->
+                                <!-- <mat-form-field appearance="outline"> -->
+                                    <!-- <input matInput type="text" formControlName="address" placeholder=""> -->
+                                    <!-- <mat-error>Enter address</mat-error> -->
+                                <!-- </mat-form-field> -->
+                            <!-- </p> -->
+                        </div>
+                    </div>
+                    <div class="details" fxLayout="row" fxLayoutAlign="space-between center">
+                        <div>
+                            <div>
+                                <mat-label class="names">City/Town</mat-label>
+                            </div>
+                            <div class= "nameadd">
+                                {{userInfo.city}}
+                                <!-- <p> -->
+                                    <!-- <mat-form-field appearance="outline"> -->
+                                        <!-- <input matInput type="text" formControlName="city" placeholder=""> -->
+                                        <!-- <mat-error>Enter city</mat-error> -->
+                                    <!-- </mat-form-field> -->
+                                <!-- </p> -->
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <mat-label class="names">State</mat-label>
+                            </div>
+                            <div class= "nameadd">
+                                {{userInfo.state}}
+                                <!-- <p> -->
+                                    <!-- <mat-form-field appearance="outline"> -->
+                                        <!-- <input matInput type="text" formControlName="state" placeholder=""> -->
+                                        <!-- <mat-error>Enter state</mat-error> -->
+                                    <!-- </mat-form-field> -->
+                                <!-- </p> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div fxLayout="column">
+                        <span class="type">Type</span>
+                        <mat-radio-group>
+                            <mat-radio-button value="1" id="home">home  {{userInfo.TypeId}}</mat-radio-button>
+                            <mat-radio-button value="2" id="work">Work  {{userInfo.TypeId}}</mat-radio-button>
+                            <mat-radio-button value="3" id="other">Other  {{userInfo.TypeId}}</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                </div>
+            <!-- </form> -->
+            <div fxLayout="column" fxLayoutAlign="space-between center" fxLayoutGap="170%">
+                <div class="address" fxLayoutAlign="center center">
+                    <span>Add New Address</span>
+                </div>
+                <div>
+                    <button mat-flat-button color="primary" class="button"
+                             >Continue</button>
+                </div>
+            </div>
+        </div>
+    </mat-expansion-panel>
 </mat-accordion>
+
+
+

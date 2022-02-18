@@ -72,4 +72,60 @@ export class BookServiceService {
     return this.httpService.getService('/Cart',true,header);
     
   }
+
+  getAddressOfUser(token:any)
+  {
+    let header={
+      headers:new HttpHeaders({
+        'Content-Type': ' application/json',
+        Authorization:'Bearer '+ token
+      })
+    }
+    return this.httpService.getService('/Address',true,header); 
+  }
+
+  addfeedbackToBook(data:any,token:any)
+  {
+    let header={
+    headers:new HttpHeaders({
+      'Content-Type': ' application/json',
+      Authorization:'Bearer '+ token
+    })
+  }
+  return this.httpService.postService('/FeedBack/'+data.BookId+'/FeedBack',data,true,header);
+  }
+
+  placeOrderOfBooks(data:any,token:any)
+  {
+    let header={
+      headers:new HttpHeaders({
+        'Content-Type': ' application/json',
+        Authorization:'Bearer '+ token
+      })
+  }
+  return this.httpService.postService('/Order/'+data.BookId,data,true,header);
+  }
+
+  cartQuantityUpdating(data:any,token:any)
+  {
+    let header={
+      headers:new HttpHeaders({
+        'Content-Type': ' application/json',
+        Authorization:'Bearer '+ token
+      })
+  }
+  return this.httpService.putService('/Cart/'+data.CartId,data,true,header);
+  }
+
+  getOrderListItems(token:any)
+  {
+    let header={
+      headers:new HttpHeaders({
+        'Content-Type': ' application/json',
+        Authorization:'Bearer '+ token
+      })
+    }
+    return this.httpService.getService('/Order',true,header);
+    
+  }
 }

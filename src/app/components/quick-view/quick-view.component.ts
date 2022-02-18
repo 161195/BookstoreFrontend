@@ -11,12 +11,15 @@ export class QuickViewComponent implements OnInit {
 token:any;
 bookId: any;
 bookData: any;
+feedBack:any;
+ratings:any;
   constructor( private bookService: BookServiceService ,private router: Router) { }
 
   ngOnInit(): void {
     this.token=localStorage.getItem('token');
     this.bookId = localStorage.getItem("bookId")
     this.getBookWithId()
+    this.addFeedback()
   }
 
   getBookWithId() { 
@@ -52,5 +55,15 @@ bookData: any;
     this.router.navigateByUrl('/Dashboards/CartList')
   }
 
-
+  addFeedback(){
+    let data = {
+      BookId: this.bookId,
+      feedBack : this.feedBack,
+      ratings : this.ratings,
+    }
+    this.bookService.addfeedbackToBook(data,this.token).subscribe((response:any) =>{
+      console.log(response)
+    })
+  } 
+  
 }

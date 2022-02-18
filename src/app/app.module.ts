@@ -25,6 +25,8 @@ import {MatRadioModule} from '@angular/material/radio';
 import { WishListAddComponent } from './components/wish-list-add/wish-list-add.component';
 import { CartListComponent } from './components/cart-list/cart-list.component';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { OrderListComponent } from './components/order-list/order-list.component';
+
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     GetAllBooksComponent,
     QuickViewComponent,
     WishListAddComponent,
-    CartListComponent
+    CartListComponent,
+    OrderListComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +60,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatDividerModule,
     MatRadioModule,
     MatExpansionModule
-
+  
 
 
   ],
