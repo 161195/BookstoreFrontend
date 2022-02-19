@@ -13,6 +13,7 @@ bookId: any;
 bookData: any;
 feedBack:any;
 ratings:any;
+feedbackData:any;
   constructor( private bookService: BookServiceService ,private router: Router) { }
 
   ngOnInit(): void {
@@ -20,6 +21,8 @@ ratings:any;
     this.bookId = localStorage.getItem("bookId")
     this.getBookWithId()
     this.addFeedback()
+    this.getfeedbackWithBookId() 
+
   }
 
   getBookWithId() { 
@@ -65,5 +68,23 @@ ratings:any;
       console.log(response)
     })
   } 
-  
+
+  getfeedbackWithBookId() { 
+    let data = {
+      BookId: this.bookId
+    }
+    this.bookService.GetAllFeedbacks(data,this.token).subscribe((response: any) => {
+      // response.book.forEach((element: any) => {
+      //   console.log(element)
+      //   if (element.bookId == this.bookId) {
+      //     this.feedbackData = element;
+      console.log(response)
+      this.feedbackData = response.feedback;
+
+      // }
+    // });
+  })
+  }
+
+
 }

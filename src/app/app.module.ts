@@ -26,6 +26,7 @@ import { WishListAddComponent } from './components/wish-list-add/wish-list-add.c
 import { CartListComponent } from './components/cart-list/cart-list.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { OrderListComponent } from './components/order-list/order-list.component';
+import { PlacedOrderComponent } from './components/placed-order/placed-order.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { OrderListComponent } from './components/order-list/order-list.component
     QuickViewComponent,
     WishListAddComponent,
     CartListComponent,
-    OrderListComponent
+    OrderListComponent,
+    PlacedOrderComponent
   ],
   imports: [
     BrowserModule,

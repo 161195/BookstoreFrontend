@@ -1,5 +1,5 @@
 <mat-accordion>
-    <mat-expansion-panel> 
+    <mat-expansion-panel (click)="getAddress()"> 
         <mat-expansion-panel-header>
             <mat-panel-title>
                 My Cart ({{cartCount}})
@@ -42,14 +42,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="rightdiv" fxLayout="column" fxLayoutAlign="space-between center" fxLayoutGap="80%" *ngFor="let book of cartList">
-                    <div class="location" fxLayoutAlign="center center">
-                        <mat-icon class="placeIcon">place</mat-icon>
-                        <span class="loc">Use current location</span>
-                    </div>
-                    <div>
-                        <button mat-flat-button color="primary" class="button" (click)="placeOrder(book)">Place Order</button>
-                    </div>
+                <div class="rightdiv" fxLayout="column" fxLayoutAlign="space-between center" fxLayoutGap="80%" *ngFor="let userInfo of addressList">
+                        <div class="location" fxLayoutAlign="center center">
+                            <mat-icon class="placeIcon">place</mat-icon>
+                            <span class="loc">Use current location</span>
+                        </div>
+                        <div>
+                            <button mat-flat-button color="primary" class="button" (click)="placeOrder(userInfo)">Place Order</button>
+                        </div>
                 </div>
             </div>
         </div>

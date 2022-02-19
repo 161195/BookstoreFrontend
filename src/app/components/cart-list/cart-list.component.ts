@@ -63,17 +63,17 @@ export class CartListComponent implements OnInit {
     })
   }
   
-  placeOrder(book:any)
+  placeOrder(userInfo:any)
   {
     let data = {
       BookId: this.bookId,
-      addressId : book.addressId,
+      addressId : userInfo.addressId,
       quantity : this.quantity,
     }
     this.bookService.placeOrderOfBooks(data,this.token).subscribe((response:any) =>{
       console.log(response)
     })
-    this.router.navigateByUrl('/Dashboards/OrderList')
+    this.router.navigateByUrl('/Dashboards/PlacedOrder')
   }
 
 }

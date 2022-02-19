@@ -128,4 +128,15 @@ export class BookServiceService {
     return this.httpService.getService('/Order',true,header);
     
   }
+  GetAllFeedbacks(data:any,token:any)
+  {
+    let header={
+      headers:new HttpHeaders({
+        'Content-Type': ' application/json',
+        Authorization:'Bearer '+ token
+      })
+    }
+    return this.httpService.getService('/feedback'+data.BookId,true,header);
+    
+  }
 }
