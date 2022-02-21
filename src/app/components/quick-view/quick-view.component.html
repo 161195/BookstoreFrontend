@@ -69,18 +69,13 @@
         <div class="overallratin">
             <div class="rate">
                 <p class="ratename">Overall Rating</p>
-                <div class="starrating">
-                    <input type="radio" id="rate-5"   [(ngModel)]="ratings" name="rate" value="5">
-                    <label for="rate-5" class="fa fa-star"></label>
-                    <input type="radio" id="rate-4"  [(ngModel)]="ratings" name="rate" value="4">
-                    <label for="rate-4" class="fa fa-star"></label>
-                    <input type="radio" id="rate-3"  [(ngModel)]="ratings"  name="rate" value="3">
-                    <label for="rate-3" class="fa fa-star"></label>
-                    <input type="radio" id="rate-2" [(ngModel)]="ratings" name="rate" value="2">
-                    <label for="rate-2" class="fa fa-star"></label>
-                    <input type="radio" id="rate-1"  [(ngModel)]="ratings" name="rate" value="1">
-                    <label for="rate-1" class="fa fa-star"></label>
-                </div>
+                <span class="star-rating">
+                    <input type="radio" name="rating" value="1" (change)="starRating($event)"><i></i>
+                    <input type="radio" name="rating" value="2" (change)="starRating($event)"><i></i>
+                    <input type="radio" name="rating" value="3" (change)="starRating($event)"><i></i>
+                    <input type="radio" name="rating" value="4" (change)="starRating($event)"><i></i>
+                    <input type="radio" name="rating" value="5" (change)="starRating($event)"><i></i>
+                </span>
             </div>
             <div>
                 <input [(ngModel)]="feedBack" type="text" placeholder="Write your review" class="review">
@@ -90,19 +85,28 @@
             </div>
         </div>
 
-        <!-- <div>
+        <div (click)="getfeedbackWithBookId()">
             <div *ngFor="let feedback of feedbackData">
-                <button class="fabbutton" mat-mini-fab style="color: lightgrey;"
-                    aria-label="Example icon button with a menu icon"> -->
-                    <!-- <mat-icon>{{getShortName(feedback.user_id.fullName)}}</mat-icon> -->
-                <!-- </button> -->
-                <!-- <span>{{feedback.fullName}}</span> -->
-            <!-- </div>
-            <div fxLayout="column">
-                <span>{{feedback.ratings}}</span>
-                <span>{{feedback.feedBack}}</span>
-            </div>
-        </div> -->
+                <div fxLayout="row" fxLayoutGap="6px">
+                <img src="../assets/user.png" width="20px" height="20px;">
+                <div class="mayu">
+                 Mayuri salunkhe
+                </div>
+                </div>
+                <div fxLayout="column" >
+                    <span class="star-rating" >
+                        <input type="radio" name="ratings" value="1" (change)="starRating($event)" [(ngModel)]="feedback.ratings"><i></i>
+                        <input type="radio" name="ratings" value="2" (change)="starRating($event)" [(ngModel)]="feedback.ratings"><i></i>
+                        <input type="radio" name="ratings" value="3" (change)="starRating($event)" [(ngModel)]="feedback.ratings"><i></i>
+                        <input type="radio" name="ratings" value="4" (change)="starRating($event)" [(ngModel)]="feedback.ratings"><i></i>
+                        <input type="radio" name="ratings" value="5" (change)="starRating($event)" [(ngModel)]="feedback.ratings"><i></i>
+                    </span>
+                    <!-- <span>{{feedback.ratings}}</span> -->
+                    <span>{{feedback.feedBack}}</span>
+                </div>
+          </div>
+           
+        </div>
 
        
     </div>

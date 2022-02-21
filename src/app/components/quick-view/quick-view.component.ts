@@ -62,16 +62,24 @@ feedbackData:any;
     let data = {
       BookId: this.bookId,
       feedBack : this.feedBack,
-      ratings : this.ratings,
+      ratings:localStorage.getItem('currentBookRating')
+      // ratings : this.ratings,
     }
     this.bookService.addfeedbackToBook(data,this.token).subscribe((response:any) =>{
       console.log(response)
     })
   } 
 
+  starRating(data:any)
+  {
+    console.log(data.target.value)
+    localStorage.setItem('currentBookRating',data.target.value)
+  }
+
   getfeedbackWithBookId() { 
     let data = {
-      BookId: this.bookId
+      BookId: this.bookId,
+      ratings:localStorage.getItem('currentBookRating')
     }
     this.bookService.GetAllFeedbacks(data,this.token).subscribe((response: any) => {
       // response.book.forEach((element: any) => {
@@ -80,11 +88,13 @@ feedbackData:any;
       //     this.feedbackData = element;
       console.log(response)
       this.feedbackData = response.feedback;
-
+      
       // }
     // });
   })
   }
+
+
 
 
 }

@@ -136,7 +136,7 @@ export class BookServiceService {
         Authorization:'Bearer '+ token
       })
     }
-    return this.httpService.getService('/feedback'+data.BookId,true,header);
+    return this.httpService.getService('/feedback/'+data.BookId,true,header);
     
   }
 }
