@@ -1,11 +1,16 @@
-import { Component, OnInit ,Input } from '@angular/core';
+import { Component, OnInit ,Input, ViewChild, Output, EventEmitter, ViewEncapsulation} from '@angular/core';
 import { BookServiceService } from 'src/app/service/bookService/book-service.service';
 import { Router } from '@angular/router';
+import { NgxStarRatingModule } from 'ngx-star-rating';
+
+
+
 
 @Component({
   selector: 'app-quick-view',
   templateUrl: './quick-view.component.html',
-  styleUrls: ['./quick-view.component.scss']
+  styleUrls: ['./quick-view.component.scss'],
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class QuickViewComponent implements OnInit {
 token:any;
@@ -14,15 +19,19 @@ bookData: any;
 feedBack:any;
 ratings:any;
 feedbackData:any;
-  constructor( private bookService: BookServiceService ,private router: Router) { }
+rating3!: number;
+
+    constructor( private bookService: BookServiceService ,private router: Router) {
+      this.rating3 = 3;
+     }
 
   ngOnInit(): void {
     this.token=localStorage.getItem('token');
     this.bookId = localStorage.getItem("bookId")
+    this.ratings=localStorage.getItem('currentBookRating')
     this.getBookWithId()
     this.addFeedback()
     this.getfeedbackWithBookId() 
-
   }
 
   getBookWithId() { 
@@ -75,26 +84,14 @@ feedbackData:any;
     console.log(data.target.value)
     localStorage.setItem('currentBookRating',data.target.value)
   }
-
+  
   getfeedbackWithBookId() { 
     let data = {
       BookId: this.bookId,
-      ratings:localStorage.getItem('currentBookRating')
     }
     this.bookService.GetAllFeedbacks(data,this.token).subscribe((response: any) => {
-      // response.book.forEach((element: any) => {
-      //   console.log(element)
-      //   if (element.bookId == this.bookId) {
-      //     this.feedbackData = element;
-      console.log(response)
       this.feedbackData = response.feedback;
-      
-      // }
-    // });
+      console.log( this.feedbackData)
   })
   }
-
-
-
-
 }

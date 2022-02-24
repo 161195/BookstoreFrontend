@@ -27,7 +27,8 @@ import { CartListComponent } from './components/cart-list/cart-list.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { OrderListComponent } from './components/order-list/order-list.component';
 import { PlacedOrderComponent } from './components/placed-order/placed-order.component';
-
+import {MatTooltipModule} from '@angular/material/tooltip';
+import { NgxStarRatingModule } from 'ngx-star-rating';
 
 @NgModule({
   declarations: [
@@ -61,8 +62,9 @@ import { PlacedOrderComponent } from './components/placed-order/placed-order.com
     MatSelectModule,
     MatDividerModule,
     MatRadioModule,
-    MatExpansionModule
-  
+    MatExpansionModule,
+    NgxStarRatingModule,
+    MatTooltipModule,
 
 
   ],

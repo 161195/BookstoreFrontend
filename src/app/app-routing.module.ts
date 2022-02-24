@@ -10,12 +10,15 @@ import { WishListAddComponent } from './components/wish-list-add/wish-list-add.c
 import {CartListComponent} from './components/cart-list/cart-list.component';
 import { OrderListComponent } from './components/order-list/order-list.component';
 import { PlacedOrderComponent } from './components/placed-order/placed-order.component';
+import { AuthenticationGuard } from './components/authentication.guard';
 
 const routes: Routes = [
+  {path: '',   redirectTo: '/register', pathMatch: 'full'},
+
   {path:'register',component:RegisterComponent},
   {path:'ForgetPasswords',component:ForgetPasswordComponent},
   {path:'ResetPasswords/:token',component:ResetPasswordComponent},
-  {path:'Dashboards',component:DashboardComponent,
+  {path:'Dashboards',component:DashboardComponent,canActivate:[AuthenticationGuard],
   children:[
       {path:'', redirectTo:"/Dashboards/books", pathMatch:'full' },
       {path:'books', component:GetAllBooksComponent},

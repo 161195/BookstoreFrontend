@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div fxLayout="row" fxLayoutAlign="center start" fxLayout.xs="row" fxFlex.xs="95">
     <div class="sideTwoImg" fxLayout="column" fxLayoutGap="10px">
         <div class="image1">
@@ -20,7 +21,7 @@
                 </button>
             </div>
             <div fxLayout="row" fxLayoutAlign="start center" class="addtowishlist">
-                <button mat-flat-button (click)="addToWishList()"  class="wishlistbtn">
+                <button mat-flat-button (click)="addToWishList()" class="wishlistbtn">
                     <mat-icon class="wishlistIcon">favorite</mat-icon>wishlist
                 </button>
             </div>
@@ -38,7 +39,7 @@
                 <span>4.5</span>
                 <mat-icon class="starIcon">star</mat-icon>
             </div>
-    
+
             <div class="prize" fxLayout="row" fxLayoutGap="10px">
                 <div class="price">
                     Rs.{{bookData?.discountPrice}}
@@ -85,30 +86,23 @@
             </div>
         </div>
 
-        <div (click)="getfeedbackWithBookId()">
-            <div *ngFor="let feedback of feedbackData">
-                <div fxLayout="row" fxLayoutGap="6px">
-                <img src="../assets/user.png" width="20px" height="20px;">
+        <div class="ForStar" *ngFor="let feedback of feedbackData">
+            <div fxLayout="row" fxLayoutGap="6px">
+                <img src="../assets/profile1.jpg" width="20px" height="20px;">
                 <div class="mayu">
-                 Mayuri salunkhe
+                    Mayuri salunkhe
                 </div>
+            </div>
+            <div class="cont">
+                <div class="stars">
+                    <ngx-star-rating [(ngModel)]="feedback.ratings" [id]="'rating3'" [disabled]="true">
+                    </ngx-star-rating>
                 </div>
-                <div fxLayout="column" >
-                    <span class="star-rating" >
-                        <input type="radio" name="ratings" value="1" (change)="starRating($event)" [(ngModel)]="feedback.ratings"><i></i>
-                        <input type="radio" name="ratings" value="2" (change)="starRating($event)" [(ngModel)]="feedback.ratings"><i></i>
-                        <input type="radio" name="ratings" value="3" (change)="starRating($event)" [(ngModel)]="feedback.ratings"><i></i>
-                        <input type="radio" name="ratings" value="4" (change)="starRating($event)" [(ngModel)]="feedback.ratings"><i></i>
-                        <input type="radio" name="ratings" value="5" (change)="starRating($event)" [(ngModel)]="feedback.ratings"><i></i>
-                    </span>
-                    <!-- <span>{{feedback.ratings}}</span> -->
-                    <span>{{feedback.feedBack}}</span>
-                </div>
-          </div>
-           
+            </div>
+            <div class="feedback">
+                {{feedback.feedBack}}
+            </div>
         </div>
-
-       
+        
     </div>
 </div>
-
